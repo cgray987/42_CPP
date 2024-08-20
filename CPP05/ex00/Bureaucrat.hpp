@@ -6,7 +6,7 @@
 /*   By: cgray <cgray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:22:50 by cgray             #+#    #+#             */
-/*   Updated: 2024/08/20 16:36:01 by cgray            ###   ########.fr       */
+/*   Updated: 2024/08/20 17:28:17 by cgray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 #include <iostream>
 #include <string>
+
+#define GRAY "\033[38;5;247m"
+#define RED "\033[31m"
+#define RST "\033[0m"
 
 class Bureaucrat
 {

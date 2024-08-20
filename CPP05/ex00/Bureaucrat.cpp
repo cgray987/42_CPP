@@ -6,7 +6,7 @@
 /*   By: cgray <cgray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:22:53 by cgray             #+#    #+#             */
-/*   Updated: 2024/08/20 17:05:55 by cgray            ###   ########.fr       */
+/*   Updated: 2024/08/20 17:26:28 by cgray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 //constructors
 Bureaucrat::Bureaucrat() : _name("default")
 {
-	std::cout << "Default Bureaucrat constructor\n";
+	std::cout << GRAY << "Default Bureaucrat constructor\n" << RST;
 	this->setGrade(42);
 }
 
@@ -33,7 +33,7 @@ Bureaucrat::Bureaucrat(unsigned int grade) : _name("default")
 
 Bureaucrat::Bureaucrat(std::string name, unsigned int grade)
 {
-	std::cout << name << " Bureaucrat with grade " << grade << " constructor\n";
+	std::cout << GRAY << name << " Bureaucrat with grade " << grade << " constructor\n" << RST;
 	this->setGrade(grade);
 }
 

@@ -6,7 +6,7 @@
 /*   By: cgray <cgray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:22:47 by cgray             #+#    #+#             */
-/*   Updated: 2024/08/20 17:05:35 by cgray            ###   ########.fr       */
+/*   Updated: 2024/08/20 17:18:14 by cgray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	main(void)
 {
-	Bureaucrat	hermes("Hermes", 150);
+	Bureaucrat	*hermes = new Bureaucrat("Hermes", 150);
 
-	hermes.incGrade();
-	hermes.incGrade();
+	hermes->decGrade();
+	hermes->decGrade();
 	std::cout << hermes;
 }
