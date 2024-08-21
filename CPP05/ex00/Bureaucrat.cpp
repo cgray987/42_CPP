@@ -6,7 +6,7 @@
 /*   By: cgray <cgray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:22:53 by cgray             #+#    #+#             */
-/*   Updated: 2024/08/20 17:26:28 by cgray            ###   ########.fr       */
+/*   Updated: 2024/08/21 15:05:19 by cgray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Bureaucrat::Bureaucrat(unsigned int grade) : _name("default")
 	this->setGrade(grade);
 }
 
-Bureaucrat::Bureaucrat(std::string name, unsigned int grade)
+Bureaucrat::Bureaucrat(std::string name, unsigned int grade) : _name(name)
 {
 	std::cout << GRAY << name << " Bureaucrat with grade " << grade << " constructor\n" << RST;
 	this->setGrade(grade);
@@ -46,7 +46,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy._name), _grade(copy.
 //destructor
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Bureaucrat destructor for " << this->getName() << "\n";
+	std::cout << GRAY << "Bureaucrat destructor for " << this->getName() << "\n" << RST;
 }
 
 //assignation
@@ -82,7 +82,7 @@ void			Bureaucrat::setGrade(unsigned int grade)
 }
 
 //overloaded ops
-std::ostream	&operator<<(std::ostream &o, Bureaucrat *b)
+std::ostream	&operator << (std::ostream &o, Bureaucrat *b)
 {
 	o << b->getName() << ", bureaucrat grade :" << b->getGrade() << "\n";
 	return (o);
@@ -96,9 +96,9 @@ void	Bureaucrat::decGrade()
 		std::cout << "decrementing grade of " << this->getGrade() << "\n";
 		this->setGrade(this->_grade + 1);
 	}
-	catch(Bureaucrat::GradeTooLowException & e)
+	catch(Bureaucrat::GradeTooLowException &e)
 	{
-		std::cerr << "decrementing grade failed: " << e.what() << "\n";
+		std::cerr << "\tdecrementing grade failed: " << e.what() << "\n";
 	}
 }
 
@@ -109,9 +109,9 @@ void	Bureaucrat::incGrade()
 		std::cout << "incrementing grade of " << this->getGrade() << "\n";
 		this->setGrade(this->_grade - 1);
 	}
-	catch(Bureaucrat::GradeTooLowException & e)
+	catch(Bureaucrat::GradeTooLowException &e)
 	{
-		std::cerr << "incrementing grade failed: " << e.what() << "\n";
+		std::cerr << "\tincrementing grade failed: " << e.what() << "\n";
 	}
 }
 
@@ -123,5 +123,5 @@ const char	*Bureaucrat::GradeTooHighException::what(void) const throw()
 
 const char	*Bureaucrat::GradeTooLowException::what(void) const throw()
 {
-	return ("Grade too low, min grade is 0");
+	return ("Grade too low, min grade is 1");
 }
