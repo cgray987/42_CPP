@@ -6,11 +6,12 @@
 /*   By: cgray <cgray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:22:53 by cgray             #+#    #+#             */
-/*   Updated: 2024/08/29 15:40:04 by cgray            ###   ########.fr       */
+/*   Updated: 2024/09/11 14:46:56 by cgray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 //constructors
 Bureaucrat::Bureaucrat() : _name("default")
@@ -81,12 +82,6 @@ void			Bureaucrat::setGrade(unsigned int grade)
 		this->_grade = grade;
 }
 
-//overloaded ops
-std::ostream	&operator << (std::ostream &o, Bureaucrat *b)
-{
-	o << b->getName() << ", bureaucrat grade: " << b->getGrade() << "\n";
-	return (o);
-}
 
 //member functions
 void	Bureaucrat::decGrade()
@@ -115,6 +110,26 @@ void	Bureaucrat::incGrade()
 	}
 }
 
+void	Bureaucrat::signForm(AForm &form)
+{
+	form.beSigned(*this);
+}
+
+void	Bureaucrat::executeForm(const AForm &form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << GRN << this->getName() << " executed form " << form.getName() << "\n";
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << RED << this->getName() << " couldn't execute form "
+				<< form.getName() << " because " << e.what() << '\n';
+	}
+
+}
+
 //exceptions
 //grade 1 is "highest" grade 150 is "lowest"
 const char	*Bureaucrat::GradeTooHighException::what(void) const throw()
@@ -122,7 +137,14 @@ const char	*Bureaucrat::GradeTooHighException::what(void) const throw()
 	return ("Grade too high, max grade is 1");
 }
 
+//overloaded ops
+std::ostream	&operator << (std::ostream &o, Bureaucrat &b)
+{
+	o << b.getName() << ", bureaucrat grade: " << b.getGrade() << "\n";
+	return (o);
+}
 const char	*Bureaucrat::GradeTooLowException::what(void) const throw()
 {
 	return ("Grade too low, min grade is 150");
 }
+

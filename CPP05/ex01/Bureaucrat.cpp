@@ -6,11 +6,12 @@
 /*   By: cgray <cgray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:22:53 by cgray             #+#    #+#             */
-/*   Updated: 2024/08/29 15:40:04 by cgray            ###   ########.fr       */
+/*   Updated: 2024/09/09 15:58:28 by cgray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 //constructors
 Bureaucrat::Bureaucrat() : _name("default")
@@ -115,6 +116,11 @@ void	Bureaucrat::incGrade()
 	}
 }
 
+void	Bureaucrat::signForm(AForm &form)
+{
+	form.beSigned(*this);
+}
+
 //exceptions
 //grade 1 is "highest" grade 150 is "lowest"
 const char	*Bureaucrat::GradeTooHighException::what(void) const throw()
@@ -126,3 +132,4 @@ const char	*Bureaucrat::GradeTooLowException::what(void) const throw()
 {
 	return ("Grade too low, min grade is 150");
 }
+

@@ -6,7 +6,7 @@
 /*   By: cgray <cgray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:22:47 by cgray             #+#    #+#             */
-/*   Updated: 2024/08/21 15:10:22 by cgray            ###   ########.fr       */
+/*   Updated: 2024/08/29 15:44:43 by cgray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,30 +22,26 @@ int	main(void)
 		{
 			std::cout << hermes << &test;
 			hermes->decGrade();
-			hermes->incGrade(); //not called because decGrade throws exception
+			hermes->incGrade(); //not called because previous decGrade throws exception
 			delete hermes;
 		}
 		catch(const std::exception& e)
 		{
-			/* note that because hermes is a pointer, decGrade() does not exit when caught exception,
-				meaning this message is printed*/
 			delete hermes;
 			std::cerr << "Exception caught in main: "<< e.what() << '\n';
 		}
 	}
 	{
 		std::cout << RED << "~~~~~~~~~~~~~~~~~~~~test 2~~~~~~~~~~~~~~~~~~~~~~~~~~\n" << RST;
-		Bureaucrat	test("test", 2);
+		Bureaucrat	test("too high", 2);
 		try
 		{
 			std::cout << &test;
 			test.incGrade();
-			test.incGrade();
+			test.incGrade(); //will throw exception
 		}
 		catch(const std::exception& e)
 		{
-			/* note that this error is not printed because test is not a pointer, so it catches in
-				incGrade() and exits out*/
 			std::cerr << "Exception caught in main: "<< e.what() << '\n';
 		}
 	}
@@ -53,15 +49,13 @@ int	main(void)
 		std::cout << RED << "~~~~~~~~~~~~~~~~~~~~test 3~~~~~~~~~~~~~~~~~~~~~~~~~~\n" << RST;
 		try
 		{
-			Bureaucrat	test("too high", 200);
+			Bureaucrat	test("too low", 200); //will throw exception
 			std::cout << &test;
 			test.incGrade();
 			test.incGrade();
 		}
 		catch(const std::exception& e)
 		{
-			/* note that this error is not printed because test is not a pointer, so it catches in
-				incGrade() and exits out*/
 			std::cerr << "Exception caught in main: "<< e.what() << '\n';
 		}
 	}
