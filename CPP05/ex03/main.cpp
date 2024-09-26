@@ -6,7 +6,7 @@
 /*   By: cgray <cgray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:22:47 by cgray             #+#    #+#             */
-/*   Updated: 2024/09/11 14:47:16 by cgray            ###   ########.fr       */
+/*   Updated: 2024/09/26 17:03:25 by cgray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ int	main(void)
 			rrf = SomeRandomIntern.makeForm("RobotomyRequestForm", "Bender");
 			hermes.signForm(*rrf);
 			hermes.executeForm(*rrf);
+			delete rrf;
 		}
 		catch (std::exception &e)
 		{
 			std::cerr << "main caught exception of " << e.what() << "\n";
 		}
-		delete rrf;
 	}
 }

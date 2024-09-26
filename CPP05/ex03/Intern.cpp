@@ -6,7 +6,7 @@
 /*   By: cgray <cgray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 17:35:01 by cgray             #+#    #+#             */
-/*   Updated: 2024/09/11 14:37:10 by cgray            ###   ########.fr       */
+/*   Updated: 2024/09/26 17:03:08 by cgray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ AForm *Intern::createRoboForm(const std::string target)
 }
 AForm *Intern::createShrubForm(const std::string target)
 {
-	return (new RobotomyRequestForm(target));
+	return (new ShrubberyCreationForm(target));
 }
 
 AForm *Intern::makeForm(const std::string formName, const std::string target)
