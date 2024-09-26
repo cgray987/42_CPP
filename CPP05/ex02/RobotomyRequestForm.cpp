@@ -6,7 +6,7 @@
 /*   By: cgray <cgray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 16:07:34 by cgray             #+#    #+#             */
-/*   Updated: 2024/09/11 14:48:00 by cgray            ###   ########.fr       */
+/*   Updated: 2024/09/26 15:51:27 by cgray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,12 @@ void	RobotomyRequestForm::performAction() const
 		std::cerr << "fork error???\n";
 		exit(EXIT_FAILURE);
 	}
-	else if (c_pid > 0) //it said to play a sound.....
-		execlp("mpg123", "mpg123", "-q", "../drill.mp3", NULL);
+	else if (c_pid > 0) //it said to play a drilling noises.....
+		execlp("mpg123", "mpg123", "-q", "/nfs/homes/cgray/Repos/CPP/CPP05/drill.mp3", NULL);
 	else
 	{
 		srand(time(0)); //seed random with current time, only changes every few seconds or so
+		std::cout << YEL << "!!!!drilling noises!!!!\n" << RST;
 		int success = rand() % 2;
 		if (success == 0)
 			std::cout << YEL << "bleep bloop! " << this->getTarget() << " has been robotomized!\n" << RST;
