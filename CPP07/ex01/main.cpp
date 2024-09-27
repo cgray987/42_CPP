@@ -6,7 +6,7 @@
 /*   By: cgray <cgray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 16:43:38 by cgray             #+#    #+#             */
-/*   Updated: 2024/09/20 13:02:05 by cgray            ###   ########.fr       */
+/*   Updated: 2024/09/27 12:41:11 by cgray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ int	main(void)
 	std::cout << RED << "\n~~~~~~~ str_to_upper ~~~~~~~\n" << RST;
 	std::string str_arr[] = {"hello", "world", "I", "am", "screaming!"};
 	std::cout <<"string array pre iter:\t";
-	print_array(str_arr, 5, " ");
+	print_array(str_arr, 5, ", ");
 	iter(str_arr, 5, str_to_upper);
 	std::cout <<"string array post iter:\t";
-	print_array(str_arr, 5, " ");
+	print_array(str_arr, 5, ", ");
 }

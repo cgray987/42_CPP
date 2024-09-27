@@ -6,7 +6,7 @@
 /*   By: cgray <cgray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 13:42:13 by cgray             #+#    #+#             */
-/*   Updated: 2024/09/16 16:42:16 by cgray            ###   ########.fr       */
+/*   Updated: 2024/09/27 12:17:20 by cgray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int main(void)
 	int	a = 2;
 	int	b = 3;
 
+	std::cout << "a = " << a << ", b = " << b << "\n";
 	::swap(a, b);
 	std::cout << "a = " << a << ", b = " << b << "\n"
 			<< "min(a, b) = " << ::min(a, b) << "\n"
@@ -25,7 +26,7 @@ int main(void)
 
 	std::string c = "hello1";
 	std::string d = "hello2";
-
+	std::cout << "c = " << c << ", d = " << d << "\n";
 	::swap(c, d);
 	std::cout << "c = " << c << ", d = " << d << "\n"
 			<< "min(c, d) = " << ::min(c, d) << "\n"
