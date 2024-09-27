@@ -6,7 +6,7 @@
 /*   By: cgray <cgray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 15:34:53 by cgray             #+#    #+#             */
-/*   Updated: 2024/09/13 17:45:59 by cgray            ###   ########.fr       */
+/*   Updated: 2024/09/27 12:06:50 by cgray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -226,12 +226,23 @@ void	Scalar::printInt(values &v)
 
 void	Scalar::printFloat(values &v)
 {
-	std::cout << "float: " << v._floatVal << "f\n";
+	std::cout << "float: " << v._floatVal;
+	if ((v._floatVal - v._intVal == 0 && (v._floatVal < 1e6 && v._floatVal > -1e6)))
+	{
+		std::cout << ".0";
+	}
+	std::cout << "f\n";
 }
 
 void	Scalar::printDouble(values &v)
 {
-	std::cout << "double: " << v._doubleVal << "\n";
+	std::cout << "double: " << v._doubleVal;
+	if ((v._doubleVal - v._intVal == 0 && (v._doubleVal < 1e6 && v._doubleVal > -1e6)))
+	{
+		std::cout << ".0";
+	}
+	std::cout << "\n";
+
 }
 
 void	Scalar::printSpecial(values &v, std::string string)
@@ -254,7 +265,7 @@ void	Scalar::printSpecial(values &v, std::string string)
 	}
 	std::cout << "char: impossible\n";
 	std::cout << "int: impossible\n";
-	std::cout << "float: " << v._floatVal << "\n";
+	std::cout << "float: " << v._floatVal << "f\n";
 	std::cout << "double: " << v._doubleVal << "\n";
 }
 
