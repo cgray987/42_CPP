@@ -6,7 +6,7 @@
 /*   By: cgray <cgray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 12:36:34 by cgray             #+#    #+#             */
-/*   Updated: 2024/09/16 13:22:54 by cgray            ###   ########.fr       */
+/*   Updated: 2024/09/27 12:11:08 by cgray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	main(void)
 		identify(ptr);
 		std::cout << "identify via ref:\t";
 		identify(*ptr);
+		std::cout << "~~~~~~~~~~~~~~~~~~~~\n";
 
 		delete ptr;
 

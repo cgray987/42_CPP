@@ -6,7 +6,7 @@
 /*   By: cgray <cgray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 15:34:53 by cgray             #+#    #+#             */
-/*   Updated: 2024/09/27 12:06:50 by cgray            ###   ########.fr       */
+/*   Updated: 2024/09/27 12:08:39 by cgray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -227,7 +227,7 @@ void	Scalar::printInt(values &v)
 void	Scalar::printFloat(values &v)
 {
 	std::cout << "float: " << v._floatVal;
-	if ((v._floatVal - v._intVal == 0 && (v._floatVal < 1e6 && v._floatVal > -1e6)))
+	if ((v._floatVal - v._intVal == 0 && (v._floatVal < 1e6 && v._floatVal > -1e6))) //e6 goes into scientific notation
 	{
 		std::cout << ".0";
 	}
