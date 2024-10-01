@@ -6,7 +6,7 @@
 /*   By: cgray <cgray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:33:20 by cgray             #+#    #+#             */
-/*   Updated: 2024/09/23 12:31:34 by cgray            ###   ########.fr       */
+/*   Updated: 2024/10/01 16:53:30 by cgray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	main(void)
 	Span test2 = Span(bigguy.size() + 1);
 	try
 	{
-		test2.multipleAdd(bigguy.begin(), bigguy.end());
+		test2.vectorAdd(bigguy.begin(), bigguy.end());
 		test2.addNumber(1); //can still add numbers regularly
 
 		// test2.printVec();

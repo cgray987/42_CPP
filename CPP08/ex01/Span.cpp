@@ -6,7 +6,7 @@
 /*   By: cgray <cgray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:33:23 by cgray             #+#    #+#             */
-/*   Updated: 2024/09/20 16:25:13 by cgray            ###   ########.fr       */
+/*   Updated: 2024/10/01 16:53:06 by cgray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ long long int		Span::longestSpan() const
 /* Adds vector from begin to end into Span _vector
 	-check if _vector has enough room
 	-insert at beginning */
-void	Span::multipleAdd(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+void	Span::vectorAdd(std::vector<int>::iterator begin, std::vector<int>::iterator end)
 {
 	if (_vector.size() + std::distance(begin, end) > this->_maxNbrs)
 		throw std::out_of_range("Vector not large enough to add this range.");

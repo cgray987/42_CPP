@@ -6,7 +6,7 @@
 /*   By: cgray <cgray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 16:52:11 by cgray             #+#    #+#             */
-/*   Updated: 2024/09/26 15:06:45 by cgray            ###   ########.fr       */
+/*   Updated: 2024/10/01 16:35:47 by cgray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,18 @@ int	main(int ac, char **av)
 {
 	try
 	{
-		PmergeMe test(ac, av);
+		std::cout << BLD << CYN << "\tVector\n" << RST;
+		PmergeMe<std::vector<int>, std::vector<std::pair<int, int> > > Vector(ac, av, "vector");
+		Vector.ford_johnson();
+
+
+		std::cout << BLD << CYN << "\tDeque\n" << RST;
+		PmergeMe<std::deque<int>, std::deque<std::pair<int, int> > > Deque(ac, av, "deque");
+		Deque.ford_johnson();
 	}
-	catch(const std::exception& e)
+	catch (const std::exception &e)
 	{
-		std::cerr << "Main caught exception: " << e.what() << '\n';
+		std::cerr << "Main caught exception: " << e.what() << std::endl;
+		return 1;
 	}
 }

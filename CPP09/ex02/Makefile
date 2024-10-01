@@ -6,7 +6,7 @@
 #    By: cgray <cgray@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/10 14:55:00 by cgray             #+#    #+#              #
-#    Updated: 2024/09/25 16:51:47 by cgray            ###   ########.fr        #
+#    Updated: 2024/10/01 16:36:20 by cgray            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = PmergeMe
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -g -std=c++98
 
-SRC = main.cpp PmergeMe.cpp
+SRC = main.cpp
 OBJ = ${SRC:.cpp = .o}
 
 #Colors:

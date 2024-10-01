@@ -6,7 +6,7 @@
 /*   By: cgray <cgray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 14:55:57 by cgray             #+#    #+#             */
-/*   Updated: 2024/09/23 14:18:30 by cgray            ###   ########.fr       */
+/*   Updated: 2024/10/01 16:51:31 by cgray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void sep(std::string test)
 template <typename Container>
 void print(const Container &container)
 {
+	if (container.empty())
+		return ;
 	typename Container::const_iterator it;
 	std::cout << "{";
 	for (it = container.begin(); it != container.end(); ++it)
