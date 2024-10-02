@@ -6,7 +6,7 @@
 /*   By: cgray <cgray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 16:52:16 by cgray             #+#    #+#             */
-/*   Updated: 2024/10/01 16:58:08 by cgray            ###   ########.fr       */
+/*   Updated: 2024/10/01 17:30:43 by cgray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,20 +110,20 @@ void	print_con(const T &con)
 	if (con.empty())
 		return ;
 	typename T::const_iterator it = con.begin();
-	size_t	size = con.size();
+	// size_t	size = con.size();
 
 	std::cout << "{ ";
-	if (size <= 5)
+	// if (size <= 5)
 	{
 		for (; it != con.end(); ++it)
 			std::cout << *it << ", ";
 	}
-	else
-	{
-		for (size_t i = 0; i < 4; ++i, ++it)
-			std::cout << *it << ", ";
-		std::cout << "[...] " << *(con.end() - 1);
-	}
+	// else
+	// {
+	// 	for (size_t i = 0; i < 4; ++i, ++it)
+	// 		std::cout << *it << ", ";
+	// 	std::cout << "[...] " << *(con.end() - 1);
+	// }
 	std::cout << "} \n";
 }
 
@@ -333,7 +333,7 @@ int PmergeMe<container, pair_con>::get_jacobs_number(int i)
 	return ((2 * get_jacobs_number(i - 2)) + get_jacobs_number(i - 1));
 }
 
-/* creates array of indicies from jacobsthal number */
+/* creates array of indicies to insert into array from jacobsthal number */
 template <typename container, typename pair_con>
 void PmergeMe<container, pair_con>::make_jacob_array(int size)
 {

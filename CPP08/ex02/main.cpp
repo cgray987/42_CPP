@@ -6,7 +6,7 @@
 /*   By: cgray <cgray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 12:48:58 by cgray             #+#    #+#             */
-/*   Updated: 2024/09/23 14:20:22 by cgray            ###   ########.fr       */
+/*   Updated: 2024/10/02 15:20:47 by cgray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,27 +57,27 @@ int	main(void)
 		std::stack<int> s(mStack);
 	}
 	{
-		sep("Replacing mStack with std::list");
+		sep("Replacing mutantStack with std::list");
 
-		std::list<int>	mStack;
+		std::list<int>	list;
 
-		mStack.push_back(5);
-		mStack.push_back(17);
+		list.push_back(5);
+		list.push_back(17);
 
-		std::cout << mStack.back() << std::endl;
+		std::cout << list.back() << std::endl;
 
-		mStack.pop_back();
+		list.pop_back();
 
-		std::cout << mStack.size() << std::endl;
+		std::cout << list.size() << std::endl;
 
-		mStack.push_back(3);
-		mStack.push_back(5);
-		mStack.push_back(737);
+		list.push_back(3);
+		list.push_back(5);
+		list.push_back(737);
 
-		mStack.push_back(0);
+		list.push_back(0);
 
-		std::list<int>::iterator it = mStack.begin();
-		std::list<int>::iterator ite = mStack.end();
+		std::list<int>::iterator it = list.begin();
+		std::list<int>::iterator ite = list.end();
 
 		++it;
 		--it;
@@ -86,7 +86,7 @@ int	main(void)
 			std::cout << *it << std::endl;
 			++it;
 		}
-		std::list<int> s(mStack);
+		std::list<int> s(list);
 	}
 	{
 		sep("Iterator vs Const iterator <float>");

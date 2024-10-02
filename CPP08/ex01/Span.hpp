@@ -6,7 +6,7 @@
 /*   By: cgray <cgray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:33:26 by cgray             #+#    #+#             */
-/*   Updated: 2024/10/01 16:52:56 by cgray            ###   ########.fr       */
+/*   Updated: 2024/10/02 16:17:26 by cgray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class Span
 
 		//member funcs
 		void			addNumber(int nbr);
-		int				shortestSpan() const;
+		unsigned int	shortestSpan() const;
 		long long int	longestSpan() const;
 
 		void	vectorAdd(std::vector<int>::iterator begin, std::vector<int>::iterator end);

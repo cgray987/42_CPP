@@ -6,7 +6,7 @@
 /*   By: cgray <cgray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:33:23 by cgray             #+#    #+#             */
-/*   Updated: 2024/10/01 16:53:06 by cgray            ###   ########.fr       */
+/*   Updated: 2024/10/02 16:17:11 by cgray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 Span::Span(unsigned int N) : _maxNbrs(N){}
 
-Span::Span(const Span &ref)
-{
-	*this = ref;
-}
+Span::Span(const Span &ref) {*this = ref;}
 
 Span::~Span(){}
 
@@ -43,23 +40,23 @@ void	Span::addNumber(int nbr)
 /* Returns shortest distance between all numbers in vector
 	-check vector is not empty
 	-copy the vector so it can be sorted
-	-start with intmax as shortest span
+	-start with uintmax as shortest span
 	-compare differences between next numbers
 	-return smallest span
 	 */
-int		Span::shortestSpan() const
+unsigned int		Span::shortestSpan() const
 {
 	if (_vector.empty() || _vector.size() == 1)
 		throw std::out_of_range("Span must have more than 2 values");
 
 	std::vector<int>	sortvec = _vector;
-	int					min_span = std::numeric_limits<int>::max();
+	unsigned int					min_span = std::numeric_limits<unsigned int>::max();
 
 	std::sort(sortvec.begin(), sortvec.end());
 
 	for (size_t i = 0; i < _vector.size() - 1; ++i)
 	{
-		int temp_span = sortvec[i + 1] - sortvec[i];
+		unsigned int temp_span = sortvec[i + 1] - sortvec[i];
 		if (temp_span < min_span)
 			min_span = temp_span;
 	}
@@ -71,7 +68,7 @@ int		Span::shortestSpan() const
 	-find max and min of vector, return difference
 
 	more longs == more smart*/
-long long int		Span::longestSpan() const
+long long int	Span::longestSpan() const
 {
 	if (_vector.empty() || _vector.size() == 1)
 		throw std::out_of_range("Span must have more than 2 values");
