@@ -6,7 +6,7 @@
 /*   By: cgray <cgray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 14:59:19 by cgray             #+#    #+#             */
-/*   Updated: 2024/10/03 13:58:14 by cgray            ###   ########.fr       */
+/*   Updated: 2024/10/03 14:19:45 by cgray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ void	BitcoinExchange::read_input(std::string fd)
 		std::getline(ss, date, '|');
 		if (valid_date(date) == false) //check if this removes whitespace
 		{
-			std::cerr << "Error: bad input =>\t" << date << "\n";
+			std::cerr << "Error: bad date input =>\t" << date << "\n";
 			continue ;
 		}
 		std::string value;
@@ -153,6 +153,7 @@ bool	BitcoinExchange::get_rate(std::string date, float value)
 bool	BitcoinExchange::valid_date(std::string date)
 {
 	struct tm	tm;
+
 	if (!strptime(date.c_str(), "%Y-%m-%d", &tm))
 		return (false);
 
