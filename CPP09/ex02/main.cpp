@@ -6,7 +6,7 @@
 /*   By: cgray <cgray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 16:52:11 by cgray             #+#    #+#             */
-/*   Updated: 2024/10/01 16:35:47 by cgray            ###   ########.fr       */
+/*   Updated: 2024/10/03 11:38:42 by cgray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@
 */
 int	main(int ac, char **av)
 {
+	if (ac == 1)
+	{
+		std::cerr << "Error: bad input -- ./PmergeMe 4 3 2 1\n";
+		return (1);
+	}
 	try
 	{
 		std::cout << BLD << CYN << "\tVector\n" << RST;
@@ -33,4 +38,5 @@ int	main(int ac, char **av)
 		std::cerr << "Main caught exception: " << e.what() << std::endl;
 		return 1;
 	}
+	return 0;
 }

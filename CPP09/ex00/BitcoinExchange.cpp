@@ -6,7 +6,7 @@
 /*   By: cgray <cgray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 14:59:19 by cgray             #+#    #+#             */
-/*   Updated: 2024/09/25 15:15:26 by cgray            ###   ########.fr       */
+/*   Updated: 2024/10/02 16:34:20 by cgray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -197,6 +197,15 @@ bool	BitcoinExchange::valid_value(std::string value)
 	{
 		std::cerr << "Error: Invalid value , multiple decimals:\t" << value << "\n";
 		return (false);
+	}
+	value = trim(value);
+	for (std::string::const_iterator it = value.begin(); it != value.end(); ++it)
+	{
+		if (!std::isdigit(static_cast<unsigned char>(*it)) && *it != '.')
+		{
+			std::cerr << "Error: not a digit:\t" << value << "\n";
+			return (false);
+		}
 	}
 
 	float	val = strtof(value.c_str(), NULL);

@@ -6,7 +6,7 @@
 /*   By: cgray <cgray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 15:19:29 by cgray             #+#    #+#             */
-/*   Updated: 2024/09/25 16:31:00 by cgray            ###   ########.fr       */
+/*   Updated: 2024/10/03 12:07:54 by cgray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main(int ac, char **av)
 	}
 	else
 	{
-		std::cerr << "Argument error: ./RPN 'num num op num op'";
+		std::cerr << "Argument error: ./RPN 'num num op num op'\n";
 		return (1);
 	}
 	return (0);
