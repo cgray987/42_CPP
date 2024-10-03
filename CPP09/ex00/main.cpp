@@ -6,7 +6,7 @@
 /*   By: cgray <cgray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 14:59:21 by cgray             #+#    #+#             */
-/*   Updated: 2024/09/25 15:02:43 by cgray            ###   ########.fr       */
+/*   Updated: 2024/10/03 13:41:09 by cgray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ int	main(int ac, char **av)
 
 	}
 	else
-		std::cerr << "Error: could not open file.\n";
+		std::cerr << "Argument Error: ./btc 'input_file.txt'\n";
 }

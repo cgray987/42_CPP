@@ -6,7 +6,7 @@
 /*   By: cgray <cgray@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 14:59:19 by cgray             #+#    #+#             */
-/*   Updated: 2024/10/02 16:34:20 by cgray            ###   ########.fr       */
+/*   Updated: 2024/10/03 13:58:14 by cgray            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,6 @@ BitcoinExchange::BitcoinExchange()
 		read_database(line);
 	}
 	db.close();
-
-
-	// days_in_months();
 }
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &ref)
@@ -94,9 +91,6 @@ bool	BitcoinExchange::check_line(std::string line)
 		return (false);
 	}
 	return (true);
-
-
-		// throw(std::runtime_error("Error: invalid line: " + line));
 }
 
 void	BitcoinExchange::read_input(std::string fd)
@@ -134,8 +128,6 @@ void	BitcoinExchange::read_input(std::string fd)
 	}
 	infile.close();
 }
-
-
 
 bool	BitcoinExchange::get_rate(std::string date, float value)
 {
@@ -195,13 +187,14 @@ bool	BitcoinExchange::valid_value(std::string value)
 		return (false);
 	if (value.find_first_of('.') != value.find_last_of('.'))
 	{
-		std::cerr << "Error: Invalid value , multiple decimals:\t" << value << "\n";
+		std::cerr << "Error: Invalid value, multiple decimals:\t" << value << "\n";
 		return (false);
 	}
 	value = trim(value);
 	for (std::string::const_iterator it = value.begin(); it != value.end(); ++it)
 	{
-		if (!std::isdigit(static_cast<unsigned char>(*it)) && *it != '.')
+		if ((!std::isdigit(static_cast<unsigned char>(*it)) && *it != '.')
+			|| (value.size() == 1 && *it == '.'))
 		{
 			std::cerr << "Error: not a digit:\t" << value << "\n";
 			return (false);
